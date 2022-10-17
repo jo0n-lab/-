@@ -49,7 +49,7 @@ $$
 
 $$
 y(t)=\sum_{k=0}^{k=\infty}\Delta u(k\Delta) h_{\Delta}(t-k\Delta)\\
-y(t)=\int_{-\infty}^{\infty} u(\tau)h(t-\tau)d\tau=\int^{-\infty}_{\infty}u(t-\tau_1)h(\tau_1)(-d\tau_1)=\int_{-\infty}^{\infty}u(t-\tau)h(\tau)d\tau
+y(t)=\int_{-\infty}^{\infty} u(\tau)h(t-\tau)d\tau=\int_{\infty}^{-\infty} u(t-\tau_1)h(\tau_1)(-d\tau_1)=\int_{-\infty}^{\infty} u(t-\tau)h(\tau)d\tau
 $$
 
 ## Convolution to Laplace
@@ -324,12 +324,6 @@ $$
     &=1-e^{-\sigma\pi/\omega_d}\\
     &\therefore \; \;M_p=e^{-\pi\zeta/\sqrt{1-\zeta^2}}
     \end{align*}
-    
-    				
-    			
-    		
-    	
-    
     $$
     
 - 정착시간($t_s$) `settling time`  : 시스템의 과도응답이 감소하는 데 걸리는 시간
