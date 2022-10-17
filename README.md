@@ -62,7 +62,6 @@ Y(s)
 &=\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}u(t-\tau)e^{-st}dt \right]h(\tau)d\tau\\
 &=\left[\int_{-\infty}^{\infty}u(\eta)e^{-s\eta}d\eta \right]\int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau\\
 &=U(s)H(s)
-
 \end{align*}
 $$
 
@@ -84,7 +83,6 @@ y(t)
 &=\int_{-\infty}^{\infty}h(\tau)e^{-s\tau}e^{st}d\tau\\
 &=\int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau e^{st}\\
 &=H(s)e^{st}
-
 \end{align*}
 $$
 
@@ -119,7 +117,6 @@ y(t)=H(s)e^{st}\\
 \Rightarrow \; \;sH(s)e^{st}+kH(t)e^{st}=e^{st}\\
 H(s)=\frac{s}{s+k}\\
 \therefore y(t)=\frac{1}{s+k}e^{st}
-
 $$
 
 입력이 $e^{st}$ 로 주어졌음에 $y(t)=H(s)e^{st}$ 으로 쓸 수 있고, 주어진 시스템 방정식에 따라 $H(s)$  를 구할 수 있었다. 전달함수는 입출력에 의한 스케일항(계수) 이므로 $y(t)$  를 간단히 얻어낸다.
@@ -152,7 +149,7 @@ $$
 <summary>dirac delta 함수</summary>
 <div markdown="1">
 
--  `dirac delta` 예제
+-  `dirac delta` 함수
     
     $$
     \delta(t)=0 \;(t\neq0) \; \; \; \;\int_{-\infty}^{\infty} \delta(t)dt=1
