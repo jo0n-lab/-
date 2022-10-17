@@ -47,8 +47,8 @@ $$
 시스템의 전체 응답은 개별적인 입력에 따른 응답의 합이라 했으므로,
 
 $$
-y(t)=\sum^{k=\infty}_{k=0}\Delta u(k\Delta) h_{\Delta}(t-k\Delta)\\
-y(t)=\int^{\infty}_{-\infty} u(\tau)h(t-\tau)d\tau=\int^{-\infty}_{\infty}u(t-\tau_1)h(\tau_1)(-d\tau_1)=\int^{\infty}_{-\infty}u(t-\tau)h(\tau)d\tau
+y(t)=\sum_{k=0}^{k=\infty}\Delta u(k\Delta) h_{\Delta}(t-k\Delta)\\
+y(t)=\int_{-\infty}^{\infty} u(\tau)h(t-\tau)d\tau=\int^{-\infty}_{\infty}u(t-\tau_1)h(\tau_1)(-d\tau_1)=\int_{-\infty}^{\infty}u(t-\tau)h(\tau)d\tau
 $$
 
 ## Convolution to Laplace
@@ -56,12 +56,11 @@ $$
 $$
 \begin{align*}
 Y(s)
-&=\int^{\infty}_{-\infty}y(t)e^{-st}dt\\
-&=\int^{\infty}_{-\infty}\left[\int^{\infty}_{-\infty}h(\tau)u(t-\tau)d\tau \right]e^{-st}dt\\
-&=\int^{\infty}_{-\infty}\left[\int^{\infty}_{-\infty}u(t-\tau)e^{-st}dt \right]h(\tau)d\tau\\
-&=\left[\int^{\infty}_{-\infty}u(\eta)e^{-s\eta}d\eta \right]\int^{\infty}_{-\infty}h(\tau)e^{-s\tau}d\tau\\
+&=\int_{-\infty}^{\infty}y(t)e^{-st}dt\\
+&=\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}h(\tau)u(t-\tau)d\tau \right]e^{-st}dt\\
+&=\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}u(t-\tau)e^{-st}dt \right]h(\tau)d\tau\\
+&=\left[\int_{-\infty}^{\infty}u(\eta)e^{-s\eta}d\eta \right]\int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau\\
 &=U(s)H(s)
-
 \end{align*}
 $$
 
@@ -78,19 +77,18 @@ $H(s)$ 를 시스템의 전달함수라고 정의한다.
 $$
 \begin{align*}
 y(t)
-&=\int^{\infty}_{-\infty}h(\tau)u(t-\tau)d\tau\\
-&=\int^{\infty}_{-\infty}h(\tau)e^{s(t-\tau)}d\tau\\
-&=\int^{\infty}_{-\infty}h(\tau)e^{-s\tau}e^{st}d\tau\\
-&=\int^{\infty}_{-\infty}h(\tau)e^{-s\tau}d\tau e^{st}\\
+&=\int_{-\infty}^{\infty}h(\tau)u(t-\tau)d\tau\\
+&=\int_{-\infty}^{\infty}h(\tau)e^{s(t-\tau)}d\tau\\
+&=\int_{-\infty}^{\infty}h(\tau)e^{-s\tau}e^{st}d\tau\\
+&=\int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau e^{st}\\
 &=H(s)e^{st}
-
 \end{align*}
 $$
 
 이고, 여기서 중요한 것은,
 
 $$
-H(s)=\int^{\infty}_{-\infty}h(\tau)e^{-s\tau}d\tau
+H(s)=\int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau
 $$
 
 임을 알아둡시당~
@@ -102,8 +100,8 @@ $$
 그리고 인과적 시스템(($-\infty,0$)이 무시되는)에서
 
 $$
-H(s)=\int^{\infty}_{0}h(\tau)e^{-s\tau}d\tau\\
-y(t)=\int^{\infty}_{0}h(\tau)u(t-\tau)d\tau
+H(s)=\int_{0}^{\infty}h(\tau)e^{-s\tau}d\tau\\
+y(t)=\int_{0}^{\infty}h(\tau)u(t-\tau)d\tau
 $$
 
 으로 간단하게 나타내진다.
@@ -124,7 +122,6 @@ $$
     입력이 $e^{st}$ 로 주어졌음에 $y(t)=H(s)e^{st}$ 으로 쓸 수 있고, 주어진 시스템 방정식에 따라 $H(s)$  를 구할 수 있었다. 전달함수는 입출력에 의한 스케일항(계수) 이므로 $y(t)$  를 간단히 얻어낸다.
     
 
-<aside>
 ❗ 전달함수 $H(s)$ 는 입출력의 스케일 항, 즉 입력 $U(s)$, 출력 $H(s)$ 의 전달 이득(gain) 으로 작용한다. 즉, 말 그대로 비 : scaling term 으로서 입출력의 Laplace 비이다.
 
 $$
@@ -156,7 +153,7 @@ $$
 - `dirac delta` 함수
     
     $$
-    \delta(t)=0\;(t\neq0)\;\;\;\;\int^{\infty}_{-\infty} \delta(t)dt=1
+    \delta(t)=0\;(t\neq0)\;\;\;\;\int_{-\infty}^{\infty} \delta(t)dt=1
     $$
     
     을 만족하는 함수 $\delta(t)$ 를 디랙-델타 함수(또는 `단위충격함수`)라 하고, $\delta(t)$ 가 입력으로 주어질 때의 응답을 `단위충격응답`이라 한다.
@@ -164,7 +161,7 @@ $$
     만약 함수 $f(t)$ 가 $t=\tau$ 에서 연속이라면, 다음이 성립한다.
     
     $$
-    \int^{\infty}_{-\infty}f(\tau)\delta(t-\tau)d\tau=\int^{\infty}_{-\infty}f(\tau)\delta(t-\tau)d\tau=f(t)
+    \int_{-\infty}^{\infty}f(\tau)\delta(t-\tau)d\tau=\int_{-\infty}^{\infty}f(\tau)\delta(t-\tau)d\tau=f(t)
     $$
     
     이 같은 성질을 `sift` 성질이라고 한다.
@@ -178,7 +175,7 @@ $$
     임을 보인다.
     
     $$
-    \int^{\infty}_{-\infty}\delta(t)e^{-st}dt=e^{-s\tau}\int^{\infty}_{-\infty}\delta(t)e^{-st+s\tau}dt=e^{-s\tau}\int^{\infty}_{-\infty}\delta(t)e^{s(\tau-t)}dt
+    \int_{-\infty}^{\infty}\delta(t)e^{-st}dt=e^{-s\tau}\int_{-\infty}^{\infty}\delta(t)e^{-st+s\tau}dt=e^{-s\tau}\int_{-\infty}^{\infty}\delta(t)e^{s(\tau-t)}dt
     $$
     
     이므로 함수 $f(t)=e^{st}$ 이고 초기조건 $f(0)=0$ 으로 두면,
